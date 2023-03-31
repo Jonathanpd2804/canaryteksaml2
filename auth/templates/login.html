@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Iniciar sesión</h2>
+
+  {% load saml2_auth %}
+  <a href="{% url 'django_saml2_auth:acs' %}">Iniciar sesión con SAML</a>
+  <br>
+  <a href="{% url 'django_saml2_auth:logout' %}">Cerrar sesión</a>
+{% endblock %}
