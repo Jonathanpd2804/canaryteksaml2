@@ -67,7 +67,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            '/home/canarytek1/Escritorio/auth-django/auth/templates/',
+            '/home/canarytek1/Escritorio/auth-saml/auth/templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -80,6 +80,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 
 WSGI_APPLICATION = 'auth_django.wsgi.application'

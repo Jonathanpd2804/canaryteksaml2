@@ -21,15 +21,8 @@ from django_saml2_auth.views import signin
 
 urlpatterns = [
     path('', home, name='home'),
-    path('hello/', hello_world, name='hello_world'),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-
-#    path('saml2/', include('djangosaml2.urls')),
-#     path('saml2/login/', login, name='saml2_login'),
-
-  
-#     path('login/', login_view, name='login'),
 
     path('saml2_auth/', include('django_saml2_auth.urls')),
     path('saml2_auth/login/', signin, name='saml2_auth_login'),
