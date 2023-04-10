@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'djangosaml2',
 ]
 
-AUTHENTICATION_BACKENDS = ['djangosaml2.backends.Saml2Backend',]
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -231,13 +231,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # }
 #     }}
 
-
 SAML2_AUTH = {
     'DEFAULT_NEXT_URL': '/',
     'ENTITY_ID': 'https://id.modularit.net/metadata',
     'NAME_ID_FORMAT': 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
     'USE_JWT': False,
     'ASSERTION_URL': 'http://127.0.0.1:8000',
-    'ENTITY_ID': 'https://id.modularit.net/metadata',
-    'METADATA_LOCAL_FILE_PATH': '/home/canarytek1/Escritorio/auth-django/saml'
+    'METADATA_LOCAL_FILE_PATH': '/home/canarytek1/Escritorio/auth-django/saml',
+    'DEBUG' : True,
+    'ACS_URL': 'http://127.0.0.1:8000/principal',
+    'ATTRIBUTES_MAP': {
+    'email': 'atributo_email_idp',
+    'username': 'atributo_username_idp',
+    'first_name': 'atributo_nombre_idp',
+    'last_name': 'atributo_apellido_idp',
 }
+}
+
+
