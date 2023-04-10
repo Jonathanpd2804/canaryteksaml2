@@ -233,19 +233,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SAML2_AUTH = {
     'DEFAULT_NEXT_URL': '/',
-    'ENTITY_ID': 'https://id.modularit.net/metadata',
+    'ENTITY_ID': 'http://127.0.0.1:8000/metadata',
     'NAME_ID_FORMAT': 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
     'USE_JWT': False,
     'ASSERTION_URL': 'http://127.0.0.1:8000',
-    'METADATA_LOCAL_FILE_PATH': '/home/canarytek1/Escritorio/auth-django/saml',
+    'METADATA_LOCAL_FILE_PATH': '/home/canarytek1/Escritorio/auth-saml/auth_django/data.xml',
     'DEBUG' : True,
-    'ACS_URL': 'http://127.0.0.1:8000/principal',
-    'ATTRIBUTES_MAP': {
-    'email': 'atributo_email_idp',
-    'username': 'atributo_username_idp',
-    'first_name': 'atributo_nombre_idp',
-    'last_name': 'atributo_apellido_idp',
-}
+    'ACS_URL': 'http://127.0.0.1:8000/saml2_auth/acs/',
+    
 }
 
 
